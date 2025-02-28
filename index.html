@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookSwap - Swap & Share Books</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1ad84dff15.js" crossorigin="anonymous"></script>
+    <!-- Firebase SDK (unchanged) -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" data-aos="fade-down">📘 BookSwap</div>
+            <ul>
+                <li data-aos="fade-down" data-aos-delay="150"><a href="#about">About</a></li>
+                <li data-aos="fade-down" data-aos-delay="300"><a href="#features">Features</a></li>
+                <li data-aos="fade-down" data-aos-delay="450"><a href="register.html" class="btn">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content", data-aos="zoom-in">
+            <h1 class="magic-text">Swap. Share. <span class="highlight">Discover.</span></h1>
+            <p><h3>Revolutionize your reading experience. Trade paperbacks, find your next obsession.</h3></p><br><br>
+            <a href="register.html" class="cta-btn pulse"><font color="cyan" size="4">Start Swapping</font></a>
+        </div>
+        <div class="floating-books">
+            <div class="book" style="--i:1">📖</div>
+            <div class="book" style="--i:2">📚</div>
+            <div class="book" style="--i:3">✨</div>
+        </div>
+    </section><br><br>
+
+    <section id="about" class="about">
+        <div class="content" data-aos="fade-up">
+            <center><h1>Welcome to the <span class="gradient-text">BookSwap</span></h1></center>
+            
+            <div class="stats-grid">
+                
+                <div class="container">
+                    <div class="box">Wide Collection</div>
+                    <div class="box">Wide Collection</div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2 data-aos="fade-up">Why BookSwap?</h2>
+        <div class="feature-grid">
+            <div class="feature-card" data-aos="fade-right">
+                <div class="icon neon">💫</div>
+                <h3>Curated Collections</h3>
+                <p>Algorithm-powered matches based on your reading vibe</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up">
+                <div class="icon neon">🚀</div>
+                <h3>Instant Swaps</h3>
+                <p>Match, chat, swap - all in 3 taps</p>
+            </div>
+            <div class="feature-card" data-aos="fade-left">
+                <div class="icon neon">🌍</div>
+                <h3>Global Reach</h3>
+                <p>Connect with bookworms worldwide</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 BookSwap. Keep it lit 🔥</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out-quart'
+        });
+
+        // Number counting animation
+        document.querySelectorAll('.number').forEach(el => {
+            const target = +el.getAttribute('data-count');
+            const duration = 2000;
+            const step = target / (duration / 10);
+            let count = 0;
+            
+            const updateCount = () => {
+                if(count < target) {
+                    count += step;
+                    el.textContent = Math.ceil(count);
+                    setTimeout(updateCount, 10);
+                } else {
+                    el.textContent = target + '+';
+                }
+            }
+            updateCount();
+        });
+    </script>
+</body>
+</html>
